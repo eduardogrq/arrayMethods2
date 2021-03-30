@@ -891,14 +891,14 @@ console.log(totalPopulation);
 // Se crea una función para calcular qué porcentaje según el total de la población tiene cada país.
 const getPorcentPopulation = (array) => {
     let result = array.map(element => {
-        return (element.population / totalPopulation * 100);
+        return `Pais: ${element.name}, Porcentaje de población: ${(element.population / totalPopulation * 100).toFixed(3)}%`;
     });
     return result;
 }
 
 let porcentPopulation = getPorcentPopulation(contriesArray);
 
-console.log(porcentPopulation);
+console.table(porcentPopulation);
 
 // EJERCICIO 4 **********************************************************************************
 
@@ -928,10 +928,10 @@ const getPopulationDensity = (array, firstCountry, secondContry) => {
     let secondCountrydensity = secondResult.population / secondResult.area ;
 
     if(firstCountrydensity > secondCountrydensity){
-        let stringResult = `El país con mayor densidad de población entre ${firstResult.name} y ${secondResult.name} es ${firstResult.name} con ${firstCountrydensity} habitantes por metro cuadrado`;
+        let stringResult = `El país con mayor densidad de población entre ${firstResult.name} y ${secondResult.name} es ${firstResult.name} con ${ (firstCountrydensity).toFixed(3)} habitantes por metro cuadrado`;
         return stringResult;
     } else {
-        let stringResult = `El país con mayor densidad de población entre ${firstResult.name} y ${secondResult.name} es ${secondResult.name} con ${secondCountrydensity} habitantes por metro cuadrado`;
+        let stringResult = `El país con mayor densidad de población entre ${firstResult.name} y ${secondResult.name} es ${secondResult.name} con ${(secondCountrydensity).toFixed(3)} habitantes por metro cuadrado`;
         return stringResult;
     }
 
